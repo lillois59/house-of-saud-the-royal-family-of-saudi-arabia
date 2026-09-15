@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Saud - The Royal Family of Saudi Arabia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --accent-gold: #e5c158;
+            --dark-bg: #0b0f19;
+            --card-bg: #151c2e;
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --emerald-green: #006c35;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-gold), #967432);
+            color: #000;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: radial-gradient(circle at center, rgba(0, 108, 53, 0.15) 0%, rgba(11, 15, 25, 0.95) 70%),
+                        linear-gradient(to bottom, transparent, var(--dark-bg));
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--primary-gold);
+            border-radius: 50px;
+            color: var(--primary-gold);
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-gold);
+            background: rgba(197, 160, 89, 0.1);
+        }
+
+        /* Features / Highlights */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            border-radius: 8px;
+            padding: 2.5rem 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #070a11;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">HOUSE OF SAUD</a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#news">News & Insights</a></li>
+                <li><a href="#lineage">Royal Lineage</a></li>
+            </ul>
+        </nav>
+        <a href="https://houseofsaud.com" target="_blank" class="cta-btn">Visit Official Site</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">The Royal Family Portal</span>
+            <h1>Explore the Legacy & Heritage of House of Saud</h1>
+            <p>Discover comprehensive news, rich historical insights, royal family lineage, and the modern transformation of the Kingdom of Saudi Arabia.</p>
+            <div class="hero-buttons">
+                <a href="https://houseofsaud.com" target="_blank" class="cta-btn">Explore HouseofSaud.com</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="about">
+        <div class="section-title">
+            <h2>Key Platform Highlights</h2>
+            <p>Everything you need to know about the Saudi Royal Dynasty</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🏛️</div>
+                <h3>Royal History & Heritage</h3>
+                <p>Delve deep into the rich history of Al Saud, tracing back through generations of leadership, culture, and statehood in the Arabian Peninsula.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📰</div>
+                <h3>Latest Royal News</h3>
+                <p>Stay up to date with verified news, announcements, state visits, and official updates directly concerning royal family developments.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👑</div>
+                <h3>Family Lineage & Biographies</h3>
+                <p>Access detailed profiles, family trees, and biographies of prominent members of the Saudi Royal Family past and present.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🇸🇦</div>
+                <h3>Vision & Modern Transformation</h3>
+                <p>Understand the pivotal role of the leadership in shaping Saudi Arabia's Vision 2030, economic diversification, and global diplomacy.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Promotional Landing Page for <a href="https://houseofsaud.com" target="_blank">HouseOfSaud.com</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
